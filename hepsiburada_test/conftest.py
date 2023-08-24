@@ -5,7 +5,6 @@ import os
 
 @pytest.fixture(scope="class")
 def init_driver(request):
-    pass
 
     supported_browsers = ['chrome', 'ch', 'headlesschrome', 'firefox', 'ff']
 
