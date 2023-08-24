@@ -14,11 +14,11 @@ class HomePage(HomePageLocators):
         base_url = get_base_url()
         self.driver.get(base_url)
 
+    def accept_cookies(self):
+        self.rm.wait_and_click(self.COOKIES)
+
 
     def open_login_page(self):
         self.rm.wait_and_click(self.LOGIN_BUTTON)
         self.rm.wait_and_click(self.GIRIS_YAP_BUTTON)
 
-
-    def verify_user(self):
-        pass
