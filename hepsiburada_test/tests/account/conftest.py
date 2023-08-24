@@ -3,7 +3,7 @@ import pytest
 from selenium import webdriver
 import os
 
-@pytest.fixture(scope="class")
+@pytest.fixture(scope="function")
 def init_driver(request):
 
     supported_browsers = ['chrome', 'ch', 'headlesschrome', 'firefox', 'ff']
@@ -19,9 +19,12 @@ def init_driver(request):
 
     if browser in ('chrome', 'ch'):
         driver = webdriver.Chrome()
-    elif browser in ('frifox', 'ff'):
+    elif browser in ('firefox', 'ff'):
         driver = webdriver.Firefox()
+
+    driver.maximize_window()  # Ekranı maximize yap
+    driver.implicitly_wait(10)
 
     request.cls.driver = driver
     yield
-    driver.quit()
+    # driver.quit()

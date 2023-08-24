@@ -1,5 +1,5 @@
 
-from hepsiburada_test.src.pages.locators import LoginPageLocators
+from hepsiburada_test.src.pages.locators.LoginPageLocators import LoginPageLocators
 from hepsiburada_test.src.ReusableMethods import ReusableMethods
 
 
