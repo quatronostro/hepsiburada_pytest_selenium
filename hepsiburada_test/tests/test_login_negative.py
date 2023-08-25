@@ -5,12 +5,11 @@ from hepsiburada_test.src.pages.LoginPage import LoginPage
 
 import pytest
 
+
 @pytest.mark.usefixtures("init_driver")
 class TestLoginNegative:
 
-
     def test_login_none_existing_user(self):
-
         home_page = HomePage(self.driver)
         login_page = LoginPage(self.driver)
 
@@ -45,8 +44,3 @@ class TestLoginNegative:
         # verify login error message
         login_page.verify_login_error_message()
         time.sleep(1)
-
-
-
-
-
